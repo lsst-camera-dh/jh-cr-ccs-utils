@@ -1,0 +1,14 @@
+# -*- python -*-
+{
+    'schema_name' : 'REBVersionsBefore',
+    'schema_version' : 0,
+    'REB0name' : str,
+    'REB0firmware' : str,
+    'REB0SN' : str,
+    'REB1name' : str,
+    'REB1firmware' : str,
+    'REB1SN' : str,
+    'REB2name' : str,
+    'REB2firmware' : str,
+    'REB2SN' : str
+}

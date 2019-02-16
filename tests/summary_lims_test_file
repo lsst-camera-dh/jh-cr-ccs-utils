@@ -1,0 +1,137 @@
+[
+  {
+    "illumination_non_uniformity_file": "None", 
+    "photodiode_ratio_file": "/nfs/farm/g/lsst/u1/mirror/BNL-test/test/LCA-10753_RSA/LCA-10753_RSA-003_ETU1-Dev/4549D/qe_raft_analysis/v0/25197/pd_ratio_201608301138-PD_RATIO-3J019.txt", 
+    "system_noise_file": "None", 
+    "schema_version": 0, 
+    "eotest_host": "dev_host", 
+    "schema_name": "eotest_calibrations", 
+    "system_crosstalk_file": "None"
+  }, 
+  {
+    "version": "0.4.28", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "harnessed-jobs"
+  }, 
+  {
+    "version": "0.13.0", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "lcatr-harness"
+  }, 
+  {
+    "version": "0.5.2", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "lcatr-schema"
+  }, 
+  {
+    "version": "0.3.1", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "lcatr-modulefiles"
+  }, 
+  {
+    "version": "0.0.10", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "metrology-data-analysis"
+  }, 
+  {
+    "version": "0.0.18", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "offline-jobs"
+  }, 
+  {
+    "version": "1.2.2", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "eTraveler-clientAPI"
+  }, 
+  {
+    "version": "0.0.18", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "eotest"
+  }, 
+  {
+    "version": "/nfs/farm/g/lsst/u1/software/redhat6-x86_64-64bit-gcc44/DMstack/v12_0", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "stack_dir"
+  }, 
+  {
+    "version": "/afs/slac/u/gl/srs/datacat/dev/0.4", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "datacatdir"
+  }, 
+  {
+    "version": "/nfs/farm/g/lsst/u1/software/datacat/config.cfg", 
+    "schema_name": "package_versions", 
+    "schema_version": 1, 
+    "package": "datacat_config"
+  }, 
+  {
+    "job_name": "qe_offline", 
+    "schema_name": "job_info", 
+    "schema_version": 0, 
+    "job_id": "12382"
+  }, 
+  {
+    "band": "u", 
+    "QE": 68.15892791748047, 
+    "schema_name": "qe_analysis", 
+    "schema_version": 0
+  }, 
+  {
+    "band": "g", 
+    "QE": 85.70418548583984, 
+    "schema_name": "qe_analysis", 
+    "schema_version": 0
+  }, 
+  {
+    "band": "r", 
+    "QE": 91.00474548339844, 
+    "schema_name": "qe_analysis", 
+    "schema_version": 0
+  }, 
+  {
+    "band": "i", 
+    "QE": 90.59464263916016, 
+    "schema_name": "qe_analysis", 
+    "schema_version": 0
+  }, 
+  {
+    "band": "z", 
+    "QE": 83.23245239257812, 
+    "schema_name": "qe_analysis", 
+    "schema_version": 0
+  }, 
+  {
+    "band": "y", 
+    "QE": 26.00727653503418, 
+    "schema_name": "qe_analysis", 
+    "schema_version": 0
+  }, 
+  {
+    "sha1": "f49c0da487029edfe16925d883d1bda868d4a36a", 
+    "datatype": "LSSTSENSORTEST", 
+    "schema_version": 0, 
+    "schema_name": "fileref", 
+    "path": "E2V-CCD250-220_QE_medians.txt", 
+    "size": 2143, 
+    "metadata": "null"
+  }, 
+  {
+    "sha1": "5d6f57068f0a2eb576a49eaef9098b1be06727fa", 
+    "datatype": "LSSTSENSORTEST", 
+    "schema_version": 0, 
+    "schema_name": "fileref", 
+    "path": "E2V-CCD250-220_QE.fits", 
+    "size": 20160, 
+    "metadata": "null"
+  }
+]
