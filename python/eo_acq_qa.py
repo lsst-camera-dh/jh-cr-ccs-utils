@@ -100,6 +100,7 @@ class AmpTrending(Trending):
         self.amp_times = dict([(amp, []) for amp in range(1, namps+1)])
         self.values = dict([(amp, []) for amp in range(1, namps+1)])
     def add_value(self, amp, mjd_obs, value):
+        print("amp=",amp)
         self.amp_times[amp].append(mjd_obs)
         self.values[amp].append(value)
     def plot_dates(self, **kwds):
@@ -240,7 +241,8 @@ class RaftTrendingObjects(TrendingObjects):
         t0 = None
         for item in files:
             frame = EoAcqFrame(item)
-            sensor_num = self.sensor_nums[frame.header_value('LSST_NUM')]
+#hn            sensor_num = self.sensor_nums[frame.header_value('LSST_NUM')]
+            sensor_num = frame.header_value('CCDSLOT')
             obs_time = frame.obs_time
             if t0 is None:
                 t0 = obs_time
@@ -257,14 +259,14 @@ class RaftTrendingObjects(TrendingObjects):
                     self[keyword].add_value(obs_time, 0)
             for amp in frame.overscan:
                 oscan_mean = np.mean(frame.overscan[amp])
-                self['oscan mean'].add_value(sensor_num, obs_time, oscan_mean)
-                self['oscan std'].add_value(sensor_num, obs_time,
+                self['oscan mean'].add_value(amp, obs_time, oscan_mean)
+                self['oscan std'].add_value(amp, obs_time,
                                             np.std(frame.overscan[amp]))
                 # Perform bias subtraction of overscan mean
-                self['imaging mean'].add_value(sensor_num, obs_time,
+                self['imaging mean'].add_value(amp, obs_time,
                                                np.mean(frame.imaging[amp]
                                                        - oscan_mean))
-                self['imaging std'].add_value(sensor_num, obs_time,
+                self['imaging std'].add_value(amp, obs_time,
                                               np.std(frame.imaging[amp]))
         self.add_test_type(t0, test_type)
 

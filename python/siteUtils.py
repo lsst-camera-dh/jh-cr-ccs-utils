@@ -19,6 +19,16 @@ import lcatr.schema
 import lcatr.harness.helpers
 from eTraveler.clientAPI.connection import Connection
 
+def getWGSlotNames(raft):
+    wgslot = {}
+    for slot,sensor_id in zip(raft.slot_names,raft.sensor_names):
+        if "ccd1" in slot or "ccd2" in slot :
+            wgslot[sensor_id] = 'WREB0'
+        elif "guidesensor1" in slot :
+            wgslot[sensor_id] = 'GREB0'
+        elif "guidesensor2" in slot  :
+            wgslot[sensor_id] = 'GREB1'
+    return wgslot
 
 def getCCDNames():
     topdir = os.getcwd()
@@ -195,7 +205,7 @@ def pythonDir():
     """
     Return directory containing the python scripts for this package.
     """
-    return os.path.join(os.environ['JHCCSUTILSDIR'], 'python')
+    return os.path.join(os.environ['JHCRCCSUTILSDIR'], 'python')
 
 def configDir():
     """
@@ -351,6 +361,7 @@ def get_prerequisite_job_id(pattern, jobname=None, paths=None,
     we are forced to use this ad hoc method.
     """
     files = dependency_glob(pattern, jobname=jobname, paths=paths, sort=sort)
+    print("pattern = ",pattern," jobname = ",jobname," paths = ",paths, " sort = ",sort)
     #
     # The job id is supposed to be the name of the lowest-level folder
     # containing the requested files.

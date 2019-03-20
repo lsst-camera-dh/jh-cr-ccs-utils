@@ -178,12 +178,13 @@ def ccsProducer(jobName, ccsScript, ccs_setup_class=None, sys_paths=(),
 
 def ccsValidator(results=None):
     """
-    Persist standard file patterns, e.g., '*.fits', 'pd-values*.txt',
+    Persist standard file patterns, e.g., '*.fits', 'pd-values*.txt', 'Photo*.txt',
     using lcatr.schema.
     """
     if results is None:
         results = []
     files = glob.glob('*/*.fits')
+    files += glob.glob('*/*.txt')
     files += glob.glob('pd-values*.txt')
     files += glob.glob('*.png')
     files += glob.glob('*.seq')
