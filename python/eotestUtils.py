@@ -10,7 +10,7 @@ try:
 except ImportError:
     import configparser
 import astropy.io.fits as pyfits
-import lsst.eotest.sensor as sensorTest
+import lsst.cr_eotest.sensor as sensorTest
 import lcatr.schema
 from lcatr.harness.helpers import dependency_glob
 import siteUtils
@@ -177,7 +177,7 @@ class JsonRepackager(object):
 
     Attributes
     ----------
-    eotest_results : lsst.eotest.sensor.EOTestResults
+    eotest_results : lsst.cr_eotest.sensor.EOTestResults
         Object to contain the EO analysis results.
     """
     _key_map = dict((('gain', 'GAIN'),
@@ -215,7 +215,7 @@ class JsonRepackager(object):
         ----------
         outfile : str, optional
             Output filename of FITS file to contain the results as
-            written by self.eotest_results.
+            written by self.cr_eotest_results.
         """
         self.eotest_results = sensorTest.EOTestResults(outfile, namps=namps)
 
