@@ -229,17 +229,25 @@ class JsonRepackager(object):
             A JSON-formatted input file, typically a summary.lims file
             produced by the Job Harness.
         """
-        foo = json.loads(open(infile).read())
+        print("eotestUtils process_file : infile = ",infile," sensor_id = ",sensor_id)
+        f = open(infile)
+        foo = json.loads(f.read())
+        print("processing")
         for result in foo:
+            if ('amp' in result) :
+                print("lims sensor_id = ",result['sensor_id'])
             if ('amp' in result and
                 (sensor_id is None or result['sensor_id'] == sensor_id)):
                 amp = result['amp']
                 for key, value in result.items():
+                    print("key = ",key)
                     if (key.find('schema') == 0 or
                         key not in self._key_map.keys()):
                         continue
+                    print("value = ",value)
                     self.eotest_results.add_seg_result(amp, self._key_map[key],
                                                        value)
+        f.close()
 
     def write(self, outfile=None, clobber=True):
         """
