@@ -100,7 +100,7 @@ class AmpTrending(Trending):
         self.amp_times = dict([(amp, []) for amp in range(1, namps+1)])
         self.values = dict([(amp, []) for amp in range(1, namps+1)])
     def add_value(self, amp, mjd_obs, value):
-        print("amp=",amp)
+#        print("amp=",amp)
         self.amp_times[amp].append(mjd_obs)
         self.values[amp].append(value)
     def plot_dates(self, **kwds):
